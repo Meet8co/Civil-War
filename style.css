@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Libre+Baskerville&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 body {
   font-family: 'Patrick Hand', cursive;
@@ -9,6 +10,12 @@ body {
   font-size: 1.3em;
   color: #333;
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  animation: fadeInPage 1s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 header {
@@ -59,18 +66,33 @@ section {
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-left: 8px solid #b59a77;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 section:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
   font-size: 2.8em;
   margin-bottom: 10px;
   letter-spacing: 1px;
+}
+
+h2::before {
+  content: '\f05a'; /* Font Awesome info icon */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  color: #b59a77;
 }
 
 h2 {
